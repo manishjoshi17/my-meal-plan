@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seven Days of Strength — an Ayurvedic vegetarian muscle-gain plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#FBFAF6; --ink:#2E2A31; --muted:#726B77; --hair:#ECE7E0; --card:#FFFFFF;
+  --accent:#2F9E7E; --accent-ink:#1E7A5F; --accent-soft:#E3F3EC;
+  --break-bg:#FCE9CE; --break-ink:#B67827;
+  --snack-bg:#EEF1C6; --snack-ink:#7E8420;
+  --lunch-bg:#D8EDD9; --lunch-ink:#3C8B5B;
+  --eve-bg:#E9E1F6;   --eve-ink:#775FAE;
+  --dinner-bg:#D9E6F4; --dinner-ink:#43719F;
+  --shadow:0 1px 2px rgba(46,42,49,.04), 0 18px 40px -24px rgba(46,42,49,.18);
+  --radius:22px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0; color:var(--ink); font-family:"Plus Jakarta Sans",system-ui,sans-serif;
+  background:
+    radial-gradient(1200px 600px at 12% -8%, #FDEFE0 0%, rgba(253,239,224,0) 60%),
+    radial-gradient(1100px 620px at 100% 4%, #E7EEF9 0%, rgba(231,238,249,0) 58%),
+    radial-gradient(900px 700px at 50% 120%, #E7F4EC 0%, rgba(231,244,236,0) 60%),
+    var(--canvas);
+  line-height:1.55; -webkit-font-smoothing:antialiased;}
+.wrap{max-width:1180px; margin:0 auto; padding:0 22px}
+h1,h2,h3,h4{font-family:"Fraunces",serif; font-weight:600; line-height:1.08; letter-spacing:-.01em; margin:0}
+p{margin:0} .mono{font-family:"Space Mono",monospace}
+
+.hero{padding:64px 0 30px}
+.eyebrow{display:inline-flex; align-items:center; gap:9px; font-size:12.5px; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--accent-ink);
+  background:var(--accent-soft); padding:8px 14px; border-radius:999px;}
+.eyebrow i{width:15px;height:15px}
+.hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center; margin-top:22px}
+.hero h1{font-size:clamp(38px,6vw,66px); margin:14px 0 0; letter-spacing:-.025em}
+.hero h1 em{font-style:italic; color:var(--accent-ink)}
+.lede{font-size:17.5px; color:var(--muted); max-width:52ch; margin-top:18px}
+.stats{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px}
+.stat{background:var(--card); border:1px solid var(--hair); border-radius:16px; padding:12px 16px;
+  display:flex; align-items:center; gap:11px; box-shadow:var(--shadow);}
+.stat i{width:20px;height:20px;color:var(--accent)}
+.stat b{font-family:"Space Mono",monospace; font-size:19px; display:block; line-height:1}
+.stat span{font-size:12px; color:var(--muted)}
+.hero-figure{position:relative}
+.hero-figure img{width:100%; height:430px; object-fit:cover; border-radius:26px; box-shadow:var(--shadow); display:block}
+.hero-figure figcaption{position:absolute; left:16px; bottom:16px; background:rgba(255,255,255,.9);
+  backdrop-filter:blur(6px); padding:9px 14px; border-radius:12px; font-size:12.5px; font-weight:600;
+  display:flex; align-items:center; gap:8px;}
+.hero-figure figcaption i{width:15px;height:15px;color:var(--accent)}
+
+section{padding:34px 0}
+.sec-head{max-width:66ch; margin-bottom:24px}
+.sec-head .kicker{font-size:12.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-ink)}
+.sec-head h2{font-size:clamp(26px,3.4vw,38px); margin-top:8px}
+.sec-head p{color:var(--muted); margin-top:10px; font-size:16px}
+
+.legend{display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; background:var(--card);
+  border:1px solid var(--hair); border-radius:18px; padding:16px 20px; box-shadow:var(--shadow);}
+.legend .lab{font-weight:700; font-size:13px; margin-right:4px}
+.leg{display:inline-flex; align-items:center; gap:8px; font-size:13.5px; font-weight:600; color:var(--ink)}
+.leg .dot{width:12px;height:12px;border-radius:50%; display:inline-block}
+.m-break .dot{background:var(--break-ink)} .m-snack .dot{background:var(--snack-ink)}
+.m-lunch .dot{background:var(--lunch-ink)} .m-eve .dot{background:var(--eve-ink)}
+.m-dinner .dot{background:var(--dinner-ink)}
+
+.rhythm{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:16px}
+.rc{background:var(--card); border:1px solid var(--hair); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+.rc h4{font-size:16.5px; font-family:"Plus Jakarta Sans",sans-serif; font-weight:700; margin-top:12px}
+.rc p{color:var(--muted); font-size:13.4px; margin-top:5px}
+
+.pillars{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.pillar{background:var(--card); border:1px solid var(--hair); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+.pico{width:44px;height:44px;border-radius:13px; background:var(--accent-soft); color:var(--accent-ink);
+  display:grid;place-items:center;}
+.pico i{width:22px;height:22px}
+.pillar h4{font-size:18px; margin-top:13px}
+.pillar p{color:var(--muted); font-size:13.2px; margin-top:6px; min-height:74px}
+.pill-tag{display:inline-block; font-family:"Space Mono",monospace; font-size:11.5px;
+  color:var(--accent-ink); background:var(--accent-soft); padding:5px 10px; border-radius:8px}
+
+.base-note{margin-top:18px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; font-size:14px; color:var(--muted)}
+.base-note b{color:var(--ink)}
+.taglist{display:flex; gap:8px; flex-wrap:wrap}
+.taglist span{background:#fff; border:1px solid var(--hair); border-radius:999px; padding:5px 12px; font-size:12.5px; font-weight:600}
+
+.days{display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:20px}
+.day{background:var(--card); border:1px solid var(--hair); border-radius:var(--radius);
+  padding:22px 22px 8px; box-shadow:var(--shadow); position:relative; overflow:hidden}
+.day-head{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px}
+.daynum{font-family:"Space Mono",monospace; font-size:12px; letter-spacing:.06em; color:var(--muted); text-transform:uppercase}
+.day-head h3{font-size:26px; margin-top:2px}
+.whey-badge{display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700;
+  color:var(--accent-ink); background:var(--accent-soft); padding:6px 11px; border-radius:999px; white-space:nowrap}
+.whey-badge i{width:13px;height:13px}
+.whey-badge.off{color:var(--lunch-ink); background:var(--lunch-bg)}
+.timeline{list-style:none; margin:6px 0 0; padding:0; position:relative}
+.timeline:before{content:""; position:absolute; left:17px; top:14px; bottom:26px; width:2px;
+  background:linear-gradient(var(--break-ink),var(--snack-ink),var(--lunch-ink),var(--eve-ink),var(--dinner-ink)); opacity:.28; border-radius:2px}
+.meal{position:relative; padding:0 0 16px 48px; min-height:44px}
+.node{position:absolute; left:0; top:0; width:36px;height:36px;border-radius:11px; display:grid;place-items:center; z-index:1}
+.node i{width:18px;height:18px}
+.m-break .node{background:var(--break-bg); color:var(--break-ink)}
+.m-snack .node{background:var(--snack-bg); color:var(--snack-ink)}
+.m-lunch .node{background:var(--lunch-bg); color:var(--lunch-ink)}
+.m-eve .node{background:var(--eve-bg); color:var(--eve-ink)}
+.m-dinner .node{background:var(--dinner-bg); color:var(--dinner-ink)}
+.meal-head{display:flex; align-items:baseline; gap:10px}
+.meal-label{font-weight:700; font-size:13.5px}
+.meal-time{font-family:"Space Mono",monospace; font-size:11px; color:var(--muted)}
+.dish{font-size:14.2px; color:#463F4B; margin-top:3px}
+.macros{display:flex; gap:7px; margin-top:8px}
+.chip{font-family:"Space Mono",monospace; font-size:11px; font-weight:700; padding:4px 9px; border-radius:7px}
+.chip.kcal{background:#F4F1EB; color:#6d6558}
+.chip.prot{background:var(--accent-soft); color:var(--accent-ink)}
+.day-total{display:flex; justify-content:space-between; align-items:center; padding:14px 2px 16px; margin-top:2px;
+  border-top:1px dashed var(--hair); font-size:13px; color:var(--muted)}
+.dt-nums b{font-family:"Space Mono",monospace; color:var(--ink)}
+
+.notes-wrap{display:grid; grid-template-columns:1.05fr .95fr; gap:26px; align-items:stretch}
+.notes{background:var(--card); border:1px solid var(--hair); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow)}
+.note{display:flex; gap:14px; padding:15px 0; border-bottom:1px solid var(--hair)}
+.note:last-child{border-bottom:0; padding-bottom:0}
+.note .ni{width:38px;height:38px;flex:0 0 38px;border-radius:11px; background:var(--accent-soft); color:var(--accent-ink); display:grid;place-items:center}
+.note .ni i{width:19px;height:19px}
+.note h4{font-size:16.5px; font-family:"Plus Jakarta Sans",sans-serif; font-weight:700}
+.note p{font-size:14px; color:var(--muted); margin-top:3px}
+.notes-figure{border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); position:relative; min-height:280px}
+.notes-figure img{width:100%;height:100%;object-fit:cover; position:absolute; inset:0}
+.notes-figure .cap{position:absolute; left:0;right:0;bottom:0; padding:20px; background:linear-gradient(transparent, rgba(30,26,32,.72)); color:#fff}
+.notes-figure .cap h4{font-family:"Fraunces",serif; font-size:22px; color:#fff}
+.notes-figure .cap p{color:rgba(255,255,255,.86); font-size:13.5px; margin-top:4px}
+
+.surplus{margin-top:22px; background:linear-gradient(120deg,#F0F8F3,#EAF3FB); border:1px solid var(--hair);
+  border-radius:var(--radius); padding:22px 24px; display:flex; gap:16px; align-items:flex-start}
+.surplus i{width:24px;height:24px;color:var(--accent);flex:0 0 auto;margin-top:2px}
+.surplus b{color:var(--ink)} .surplus p{color:var(--muted); font-size:15px}
+
+footer.foot{padding:40px 0 60px; text-align:center; color:var(--muted); font-size:13px}
+footer.foot .line{width:46px;height:3px;background:var(--accent);border-radius:3px;margin:0 auto 18px;opacity:.5}
+
+.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; transition-delay:calc(var(--i,0) * 55ms)}
+.reveal.in{opacity:1; transform:none}
+
+@media (max-width:900px){ .pillars{grid-template-columns:repeat(2,1fr)} .rhythm{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr} .hero-figure img{height:300px}
+  .notes-wrap{grid-template-columns:1fr} .notes-figure{min-height:220px}
+}
+@media (max-width:520px){
+  .days{grid-template-columns:1fr} .pillars{grid-template-columns:1fr} .rhythm{grid-template-columns:1fr}
+  .hero{padding:40px 0 20px}
+}
+@media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
+:focus-visible{outline:3px solid var(--accent); outline-offset:3px; border-radius:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="hero">
+    <span class="eyebrow"><i data-lucide="sprout"></i>Ayurvedic · sattvic · muscle-gain</span>
+    <div class="hero-grid">
+      <div>
+        <h1>Seven days<br>built for <em>strength</em></h1>
+        <p class="lede">A no-onion, no-garlic week that keeps Ayurvedic timing: heaviest at noon, light by night. Protein now spreads across whey, paneer, chana and sattu, moong and sprouts, rajma, masoor, ragi, nuts and seeds. No soya, no makhana, and no curd after dark.</p>
+        <div class="stats">
+          <div class="stat"><i data-lucide="calendar-days"></i><div><b>7</b><span>days, ready to cook</span></div></div>
+          <div class="stat"><i data-lucide="flame"></i><div><b>~2,450</b><span>kcal / day</span></div></div>
+          <div class="stat"><i data-lucide="dumbbell"></i><div><b>~132g</b><span>protein / day</span></div></div>
+          <div class="stat"><i data-lucide="leaf"></i><div><b>100%</b><span>sattvic &amp; veg</span></div></div>
+        </div>
+      </div>
+      <figure class="hero-figure">
+        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="A home-style Indian vegetarian thali with dal, sabzi, roti and salad">
+        <figcaption><i data-lucide="utensils"></i>Home-cooked, every day</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="kicker">How to read the week</span>
+      <h2>Five meals, tuned to the Ayurvedic clock</h2>
+      <p>Each day runs as a timeline from sunrise to night. Colour tells you which meal it is, warm at breakfast and cool by dinner, and the meals themselves follow when your body digests best.</p>
+    </div>
+    <div class="legend"><span class="lab">Meals:</span><span class="leg m-break"><i class="dot"></i>Breakfast</span><span class="leg m-snack"><i class="dot"></i>Mid-morning</span><span class="leg m-lunch"><i class="dot"></i>Lunch</span><span class="leg m-eve"><i class="dot"></i>Evening</span><span class="leg m-dinner"><i class="dot"></i>Dinner</span></div>
+    <div class="rhythm">
+      <div class="rc reveal" style="--i:0">
+        <span class="pico"><i data-lucide="sun"></i></span>
+        <h4>Agni peaks at noon</h4><p>Your biggest, most protein-dense meal sits at lunch.</p>
+      </div>
+
+      <div class="rc reveal" style="--i:1">
+        <span class="pico"><i data-lucide="moon-star"></i></span>
+        <h4>Dinner light and early</h4><p>Moong, veg and millet, nothing heavy after dark.</p>
+      </div>
+
+      <div class="rc reveal" style="--i:2">
+        <span class="pico"><i data-lucide="cup-soda"></i></span>
+        <h4>Curd only at midday</h4><p>As chaas, never at night when it turns to kapha.</p>
+      </div>
+
+      <div class="rc reveal" style="--i:3">
+        <span class="pico"><i data-lucide="apple"></i></span>
+        <h4>Fruit on its own</h4><p>Eaten alone, not mixed into curd or a chana bowl.</p>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="kicker">Protein, spread wide</span>
+      <h2>Where the protein comes from</h2>
+      <p>No single source repeats too hard. Paneer and buttermilk each appear once a day at most, and the heavy lifting moves around the week.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal" style="--i:0">
+        <span class="pico"><i data-lucide="dumbbell"></i></span>
+        <h4>ON Gold Standard whey</h4>
+        <p>Alternate days, always in water, taken by early evening not at night</p>
+        <span class="pill-tag">Alt days · PM</span>
+      </div>
+
+      <div class="pillar reveal" style="--i:1">
+        <span class="pico"><i data-lucide="grip"></i></span>
+        <h4>Paneer</h4>
+        <p>Heavy and kapha, so daytime only and just once a day</p>
+        <span class="pill-tag">Daytime · 1×</span>
+      </div>
+
+      <div class="pillar reveal" style="--i:2">
+        <span class="pico"><i data-lucide="wheat"></i></span>
+        <h4>Chana, besan &amp; sattu</h4>
+        <p>Chana at lunch, besan chilla, plus a cooling sattu drink for the heat</p>
+        <span class="pill-tag">Lunch + snack</span>
+      </div>
+
+      <div class="pillar reveal" style="--i:3">
+        <span class="pico"><i data-lucide="sprout"></i></span>
+        <h4>Moong &amp; sprouts</h4>
+        <p>The lightest, most sattvic dal, so it anchors every dinner</p>
+        <span class="pill-tag">Dinner</span>
+      </div>
+
+      <div class="pillar reveal" style="--i:4">
+        <span class="pico"><i data-lucide="bean"></i></span>
+        <h4>Rajma &amp; masoor</h4>
+        <p>Heavier legumes, kept to lunch when digestion is strongest</p>
+        <span class="pill-tag">Lunch only</span>
+      </div>
+
+      <div class="pillar reveal" style="--i:5">
+        <span class="pico"><i data-lucide="nut"></i></span>
+        <h4>Nuts &amp; seeds</h4>
+        <p>Soaked almonds and walnuts, with pumpkin, sunflower, flax and til</p>
+        <span class="pill-tag">Soaked snacks</span>
+      </div>
+
+      <div class="pillar reveal" style="--i:6">
+        <span class="pico"><i data-lucide="wheat"></i></span>
+        <h4>Ragi &amp; millets</h4>
+        <p>Protein with calcium, as dosa, roti or a warm morning porridge</p>
+        <span class="pill-tag">Morning / night</span>
+      </div>
+
+      <div class="pillar reveal" style="--i:7">
+        <span class="pico"><i data-lucide="cup-soda"></i></span>
+        <h4>Buttermilk (chaas)</h4>
+        <p>Curd's lighter form with roasted jeera, at midday only</p>
+        <span class="pill-tag">Lunch only</span>
+      </div></div>
+    <div class="base-note">
+      <b>Flavour without onion or garlic:</b>
+      <div class="taglist"><span>hing</span><span>ginger</span><span>ajwain</span><span>jeera</span><span>green chilli</span><span>tomato</span><span>coriander</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="kicker">The plan</span>
+      <h2>Your seven days</h2>
+      <p>Whey lands on alternate days, taken by early evening. Lunches carry the heavy legumes and paneer; dinners stay light on moong, millet and veg, with no curd or paneer after dark.</p>
+    </div>
+    <div class="days">
+    <article class="day reveal" style="--i:0">
+      <header class="day-head">
+        <div class="day-name"><span class="daynum">Day 1</span><h3>Monday</h3></div>
+        <span class="whey-badge"><i data-lucide="zap"></i>Whey day</span>
+      </header>
+      <ol class="timeline">
+        <li class="meal m-break">
+          <span class="node"><i data-lucide="sunrise"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Breakfast</span>
+              <span class="meal-time">7:30 am</span>
+            </div>
+            <p class="dish">Besan chilla x3, tomato-ginger, soaked almonds</p>
+            <div class="macros">
+              <span class="chip kcal">460 kcal</span>
+              <span class="chip prot">21g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-snack">
+          <span class="node"><i data-lucide="apple"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Mid-morning</span>
+              <span class="meal-time">11:00 am</span>
+            </div>
+            <p class="dish">Sattu drink with jeera, black salt & lemon, few walnuts</p>
+            <div class="macros">
+              <span class="chip kcal">330 kcal</span>
+              <span class="chip prot">15g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-lunch">
+          <span class="node"><i data-lucide="utensils-crossed"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Lunch</span>
+              <span class="meal-time">1:00 pm</span>
+            </div>
+            <p class="dish">Chana masala, jeera rice, chaas, moong-sprout salad, matar</p>
+            <div class="macros">
+              <span class="chip kcal">800 kcal</span>
+              <span class="chip prot">46g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-eve">
+          <span class="node"><i data-lucide="cup-soda"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Evening</span>
+              <span class="meal-time">5:30 pm</span>
+            </div>
+            <p class="dish">ON whey in water + soaked almonds</p>
+            <div class="macros">
+              <span class="chip kcal">230 kcal</span>
+              <span class="chip prot">25g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-dinner">
+          <span class="node"><i data-lucide="moon"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Dinner</span>
+              <span class="meal-time">7:45 pm</span>
+            </div>
+            <p class="dish">Moong dal, lauki sabzi, 2 roti</p>
+            <div class="macros">
+              <span class="chip kcal">590 kcal</span>
+              <span class="chip prot">28g protein</span>
+            </div>
+          </div>
+        </li></ol>
+      <footer class="day-total">
+        <span>Day total</span>
+        <span class="dt-nums"><b>2410</b> kcal &nbsp;·&nbsp; <b>135g</b> protein</span>
+      </footer>
+    </article>
+
+    <article class="day reveal" style="--i:1">
+      <header class="day-head">
+        <div class="day-name"><span class="daynum">Day 2</span><h3>Tuesday</h3></div>
+        <span class="whey-badge off"><i data-lucide="leaf"></i>Whole-food day</span>
+      </header>
+      <ol class="timeline">
+        <li class="meal m-break">
+          <span class="node"><i data-lucide="sunrise"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Breakfast</span>
+              <span class="meal-time">7:30 am</span>
+            </div>
+            <p class="dish">Paneer paratha x2</p>
+            <div class="macros">
+              <span class="chip kcal">470 kcal</span>
+              <span class="chip prot">24g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-snack">
+          <span class="node"><i data-lucide="apple"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Mid-morning</span>
+              <span class="meal-time">11:00 am</span>
+            </div>
+            <p class="dish">Papaya, eaten on its own</p>
+            <div class="macros">
+              <span class="chip kcal">200 kcal</span>
+              <span class="chip prot">3g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-lunch">
+          <span class="node"><i data-lucide="utensils-crossed"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Lunch</span>
+              <span class="meal-time">1:00 pm</span>
+            </div>
+            <p class="dish">Rajma, rice, chaas, sprout salad, matar</p>
+            <div class="macros">
+              <span class="chip kcal">810 kcal</span>
+              <span class="chip prot">48g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-eve">
+          <span class="node"><i data-lucide="cup-soda"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Evening</span>
+              <span class="meal-time">5:30 pm</span>
+            </div>
+            <p class="dish">Moong-sprout chaat + toasted seeds & peanuts</p>
+            <div class="macros">
+              <span class="chip kcal">330 kcal</span>
+              <span class="chip prot">26g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-dinner">
+          <span class="node"><i data-lucide="moon"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Dinner</span>
+              <span class="meal-time">7:45 pm</span>
+            </div>
+            <p class="dish">Moong khichdi with ghee & jeera, sabzi</p>
+            <div class="macros">
+              <span class="chip kcal">600 kcal</span>
+              <span class="chip prot">29g protein</span>
+            </div>
+          </div>
+        </li></ol>
+      <footer class="day-total">
+        <span>Day total</span>
+        <span class="dt-nums"><b>2410</b> kcal &nbsp;·&nbsp; <b>130g</b> protein</span>
+      </footer>
+    </article>
+
+    <article class="day reveal" style="--i:2">
+      <header class="day-head">
+        <div class="day-name"><span class="daynum">Day 3</span><h3>Wednesday</h3></div>
+        <span class="whey-badge"><i data-lucide="zap"></i>Whey day</span>
+      </header>
+      <ol class="timeline">
+        <li class="meal m-break">
+          <span class="node"><i data-lucide="sunrise"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Breakfast</span>
+              <span class="meal-time">7:30 am</span>
+            </div>
+            <p class="dish">Moong dal cheela x2, green chutney</p>
+            <div class="macros">
+              <span class="chip kcal">450 kcal</span>
+              <span class="chip prot">22g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-snack">
+          <span class="node"><i data-lucide="apple"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Mid-morning</span>
+              <span class="meal-time">11:00 am</span>
+            </div>
+            <p class="dish">Sattu drink + soaked almonds</p>
+            <div class="macros">
+              <span class="chip kcal">330 kcal</span>
+              <span class="chip prot">16g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-lunch">
+          <span class="node"><i data-lucide="utensils-crossed"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Lunch</span>
+              <span class="meal-time">1:00 pm</span>
+            </div>
+            <p class="dish">Paneer-matar sabzi, 2 roti, chaas, masoor-sprout salad</p>
+            <div class="macros">
+              <span class="chip kcal">800 kcal</span>
+              <span class="chip prot">45g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-eve">
+          <span class="node"><i data-lucide="cup-soda"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Evening</span>
+              <span class="meal-time">5:30 pm</span>
+            </div>
+            <p class="dish">ON whey in water + walnuts</p>
+            <div class="macros">
+              <span class="chip kcal">220 kcal</span>
+              <span class="chip prot">25g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-dinner">
+          <span class="node"><i data-lucide="moon"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Dinner</span>
+              <span class="meal-time">7:45 pm</span>
+            </div>
+            <p class="dish">Ragi roti, light moong dal, bhindi</p>
+            <div class="macros">
+              <span class="chip kcal">600 kcal</span>
+              <span class="chip prot">27g protein</span>
+            </div>
+          </div>
+        </li></ol>
+      <footer class="day-total">
+        <span>Day total</span>
+        <span class="dt-nums"><b>2400</b> kcal &nbsp;·&nbsp; <b>135g</b> protein</span>
+      </footer>
+    </article>
+
+    <article class="day reveal" style="--i:3">
+      <header class="day-head">
+        <div class="day-name"><span class="daynum">Day 4</span><h3>Thursday</h3></div>
+        <span class="whey-badge off"><i data-lucide="leaf"></i>Whole-food day</span>
+      </header>
+      <ol class="timeline">
+        <li class="meal m-break">
+          <span class="node"><i data-lucide="sunrise"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Breakfast</span>
+              <span class="meal-time">7:30 am</span>
+            </div>
+            <p class="dish">Sattu paratha x2, green chutney</p>
+            <div class="macros">
+              <span class="chip kcal">470 kcal</span>
+              <span class="chip prot">21g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-snack">
+          <span class="node"><i data-lucide="apple"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Mid-morning</span>
+              <span class="meal-time">11:00 am</span>
+            </div>
+            <p class="dish">Soaked nuts & seeds mix (almond, walnut, pumpkin, sunflower)</p>
+            <div class="macros">
+              <span class="chip kcal">300 kcal</span>
+              <span class="chip prot">12g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-lunch">
+          <span class="node"><i data-lucide="utensils-crossed"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Lunch</span>
+              <span class="meal-time">1:00 pm</span>
+            </div>
+            <p class="dish">Masoor dal, rice, chaas, paneer bhurji, salad</p>
+            <div class="macros">
+              <span class="chip kcal">810 kcal</span>
+              <span class="chip prot">47g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-eve">
+          <span class="node"><i data-lucide="cup-soda"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Evening</span>
+              <span class="meal-time">5:30 pm</span>
+            </div>
+            <p class="dish">Roasted chana + peanuts</p>
+            <div class="macros">
+              <span class="chip kcal">320 kcal</span>
+              <span class="chip prot">22g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-dinner">
+          <span class="node"><i data-lucide="moon"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Dinner</span>
+              <span class="meal-time">7:45 pm</span>
+            </div>
+            <p class="dish">Moong dal, mix veg, 2 roti</p>
+            <div class="macros">
+              <span class="chip kcal">600 kcal</span>
+              <span class="chip prot">28g protein</span>
+            </div>
+          </div>
+        </li></ol>
+      <footer class="day-total">
+        <span>Day total</span>
+        <span class="dt-nums"><b>2500</b> kcal &nbsp;·&nbsp; <b>130g</b> protein</span>
+      </footer>
+    </article>
+
+    <article class="day reveal" style="--i:4">
+      <header class="day-head">
+        <div class="day-name"><span class="daynum">Day 5</span><h3>Friday</h3></div>
+        <span class="whey-badge"><i data-lucide="zap"></i>Whey day</span>
+      </header>
+      <ol class="timeline">
+        <li class="meal m-break">
+          <span class="node"><i data-lucide="sunrise"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Breakfast</span>
+              <span class="meal-time">7:30 am</span>
+            </div>
+            <p class="dish">Ragi dosa x2, peanut chutney</p>
+            <div class="macros">
+              <span class="chip kcal">460 kcal</span>
+              <span class="chip prot">20g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-snack">
+          <span class="node"><i data-lucide="apple"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Mid-morning</span>
+              <span class="meal-time">11:00 am</span>
+            </div>
+            <p class="dish">Sattu drink + walnuts</p>
+            <div class="macros">
+              <span class="chip kcal">330 kcal</span>
+              <span class="chip prot">16g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-lunch">
+          <span class="node"><i data-lucide="utensils-crossed"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Lunch</span>
+              <span class="meal-time">1:00 pm</span>
+            </div>
+            <p class="dish">Chole, rice, chaas, paneer-cube & matar salad</p>
+            <div class="macros">
+              <span class="chip kcal">810 kcal</span>
+              <span class="chip prot">46g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-eve">
+          <span class="node"><i data-lucide="cup-soda"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Evening</span>
+              <span class="meal-time">5:30 pm</span>
+            </div>
+            <p class="dish">ON whey in water + soaked almonds</p>
+            <div class="macros">
+              <span class="chip kcal">220 kcal</span>
+              <span class="chip prot">25g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-dinner">
+          <span class="node"><i data-lucide="moon"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Dinner</span>
+              <span class="meal-time">7:45 pm</span>
+            </div>
+            <p class="dish">Moong sprouts sabzi + moong dal, 2 roti</p>
+            <div class="macros">
+              <span class="chip kcal">590 kcal</span>
+              <span class="chip prot">28g protein</span>
+            </div>
+          </div>
+        </li></ol>
+      <footer class="day-total">
+        <span>Day total</span>
+        <span class="dt-nums"><b>2410</b> kcal &nbsp;·&nbsp; <b>135g</b> protein</span>
+      </footer>
+    </article>
+
+    <article class="day reveal" style="--i:5">
+      <header class="day-head">
+        <div class="day-name"><span class="daynum">Day 6</span><h3>Saturday</h3></div>
+        <span class="whey-badge off"><i data-lucide="leaf"></i>Whole-food day</span>
+      </header>
+      <ol class="timeline">
+        <li class="meal m-break">
+          <span class="node"><i data-lucide="sunrise"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Breakfast</span>
+              <span class="meal-time">7:30 am</span>
+            </div>
+            <p class="dish">Paneer & matar besan chilla x2, green chutney</p>
+            <div class="macros">
+              <span class="chip kcal">470 kcal</span>
+              <span class="chip prot">25g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-snack">
+          <span class="node"><i data-lucide="apple"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Mid-morning</span>
+              <span class="meal-time">11:00 am</span>
+            </div>
+            <p class="dish">Pomegranate, eaten on its own</p>
+            <div class="macros">
+              <span class="chip kcal">180 kcal</span>
+              <span class="chip prot">3g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-lunch">
+          <span class="node"><i data-lucide="utensils-crossed"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Lunch</span>
+              <span class="meal-time">1:00 pm</span>
+            </div>
+            <p class="dish">Rajma, rice, chaas, moong-sprout salad</p>
+            <div class="macros">
+              <span class="chip kcal">810 kcal</span>
+              <span class="chip prot">48g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-eve">
+          <span class="node"><i data-lucide="cup-soda"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Evening</span>
+              <span class="meal-time">5:30 pm</span>
+            </div>
+            <p class="dish">Sattu drink + roasted chana & peanuts</p>
+            <div class="macros">
+              <span class="chip kcal">340 kcal</span>
+              <span class="chip prot">25g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-dinner">
+          <span class="node"><i data-lucide="moon"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Dinner</span>
+              <span class="meal-time">7:45 pm</span>
+            </div>
+            <p class="dish">Ragi roti, light moong dal, lauki</p>
+            <div class="macros">
+              <span class="chip kcal">610 kcal</span>
+              <span class="chip prot">30g protein</span>
+            </div>
+          </div>
+        </li></ol>
+      <footer class="day-total">
+        <span>Day total</span>
+        <span class="dt-nums"><b>2410</b> kcal &nbsp;·&nbsp; <b>131g</b> protein</span>
+      </footer>
+    </article>
+
+    <article class="day reveal" style="--i:6">
+      <header class="day-head">
+        <div class="day-name"><span class="daynum">Day 7</span><h3>Sunday</h3></div>
+        <span class="whey-badge"><i data-lucide="zap"></i>Whey day</span>
+      </header>
+      <ol class="timeline">
+        <li class="meal m-break">
+          <span class="node"><i data-lucide="sunrise"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Breakfast</span>
+              <span class="meal-time">7:30 am</span>
+            </div>
+            <p class="dish">Sattu paratha x2 + soaked almonds</p>
+            <div class="macros">
+              <span class="chip kcal">470 kcal</span>
+              <span class="chip prot">20g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-snack">
+          <span class="node"><i data-lucide="apple"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Mid-morning</span>
+              <span class="meal-time">11:00 am</span>
+            </div>
+            <p class="dish">Soaked nuts & seeds mix</p>
+            <div class="macros">
+              <span class="chip kcal">320 kcal</span>
+              <span class="chip prot">13g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-lunch">
+          <span class="node"><i data-lucide="utensils-crossed"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Lunch</span>
+              <span class="meal-time">1:00 pm</span>
+            </div>
+            <p class="dish">Paneer sabzi, masoor dal, 2 roti, chaas, salad</p>
+            <div class="macros">
+              <span class="chip kcal">810 kcal</span>
+              <span class="chip prot">46g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-eve">
+          <span class="node"><i data-lucide="cup-soda"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Evening</span>
+              <span class="meal-time">5:30 pm</span>
+            </div>
+            <p class="dish">ON whey in water + walnuts</p>
+            <div class="macros">
+              <span class="chip kcal">220 kcal</span>
+              <span class="chip prot">25g protein</span>
+            </div>
+          </div>
+        </li>
+        <li class="meal m-dinner">
+          <span class="node"><i data-lucide="moon"></i></span>
+          <div class="meal-body">
+            <div class="meal-head">
+              <span class="meal-label">Dinner</span>
+              <span class="meal-time">7:45 pm</span>
+            </div>
+            <p class="dish">Moong khichdi + matar & mix veg</p>
+            <div class="macros">
+              <span class="chip kcal">600 kcal</span>
+              <span class="chip prot">28g protein</span>
+            </div>
+          </div>
+        </li></ol>
+      <footer class="day-total">
+        <span>Day total</span>
+        <span class="dt-nums"><b>2420</b> kcal &nbsp;·&nbsp; <b>132g</b> protein</span>
+      </footer>
+    </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="kicker">Make it work</span>
+      <h2>A few things that matter more than the menu</h2>
+    </div>
+    <div class="notes-wrap">
+      <div class="notes">
+        <div class="note reveal" style="--i:0">
+          <span class="ni"><i data-lucide="activity"></i></span>
+          <div><h4>Food is the raw material, not the trigger</h4><p>Muscle grows when you make it work harder than last time. Pair this with progressive resistance three days a week, push-ups, squats, bands or dumbbells, or the plan mostly maintains you.</p></div>
+        </div>
+        <div class="note reveal" style="--i:1">
+          <span class="ni"><i data-lucide="scale"></i></span>
+          <div><h4>Weigh in weekly, same time</h4><p>Gaining faster than 0.25–0.3 kg a week is mostly fat, so ease off the add-ons. Flat for 2–3 weeks means add about 200 kcal.</p></div>
+        </div>
+        <div class="note reveal" style="--i:2">
+          <span class="ni"><i data-lucide="cup-soda"></i></span>
+          <div><h4>Curd becomes chaas, and only at lunch</h4><p>Since milk doesn't sit well and curd sours to kapha at night, your only dairy is buttermilk at midday, with roasted jeera. Whey goes in water, never with fruit.</p></div>
+        </div>
+        <div class="note reveal" style="--i:3">
+          <span class="ni"><i data-lucide="shopping-basket"></i></span>
+          <div><h4>Stock for the week</h4><p>Paneer and a little curd for chaas, moong (dal and to sprout), chana, besan and sattu, rajma and masoor, ragi flour, and a jar of mixed nuts and seeds kept soaking.</p></div>
+        </div>
+      </div>
+      <figure class="notes-figure">
+        <img src="https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A bowl of home-cooked Indian curry">
+        <div class="cap"><h4>Rajasthani, quietly</h4><p>Sattu, moong and millet keep the week varied without onion or garlic.</p></div>
+      </figure>
+    </div>
+
+    <div class="surplus">
+      <i data-lucide="trending-up"></i>
+      <p><b>To hit the ~2,600 kcal gaining surplus:</b> add one of these, a katori of rice at lunch, an extra roti, a spoon of ghee, or a second glass of chaas at midday. Small and steady beats a big jump you'd only have to cut later.</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="line"></div>
+    Built around your inputs: vegetarian, sattvic, Ayurvedic timing, muscle-gain. Not medical advice, adjust to how your body responds.
+  </footer>
+
+</div>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>
+  try { if (window.lucide) lucide.createIcons(); } catch(e) {}
+  const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);}});}, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
